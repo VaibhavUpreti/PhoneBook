@@ -1,4 +1,4 @@
-# ![PhoneBook](https://phoneeboook.herokuapp.com/)
+# [PhoneBook](https://phoneeboook.herokuapp.com/)
 
 PhoneBook is a webapp built with Ruby and Rails which demonstrates the simplicity of CRUD(Create, Read, Update and Delete) operations which can be performed with the framework.
 
@@ -6,7 +6,7 @@ PhoneBook is a webapp built with Ruby and Rails which demonstrates the simplicit
 With PhoneBook you can easily save your contacts details- instagram, twitter, phone number , email address, IRC handle , discord username .
 
 
-The Project is hosted at ![LIVE](https://phoneeboook.herokuapp.com/)
+The Project is hosted at [LIVE](https://phoneeboook.herokuapp.com/)
 
 # Features.
 
