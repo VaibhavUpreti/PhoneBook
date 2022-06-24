@@ -1,9 +1,29 @@
 # PhoneBook 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+PhoneBook is a webapp built with Ruby and Rails which demonstrates the simplicity of CRUD(Create, Read, Update and Delete) operations which can be performed with the framework.
 
-Things you may want to cover:
+With PhoneBook you can easily save your contacts details- instagram, twitter, phone number , email address, IRC handle , discord username .
+
+## Features.
+
+- Add Users
+    Add new users in an instant and which will then remain in your PhoneBook forever.
+
+
+- Edit Profile
+    Option to edit your own profile.
+
+
+- Organized Dashboard
+    PhoneBook provides a clean dashboard where all your contacts are stored.
+
+
+- Card View
+    You have a card view option to see your contact where you can edit your details.
+
+
+
+Things you may want to cover before setting up the project locally :
 
 * Ruby version
 
