@@ -7,7 +7,6 @@ gem "rails", "~> 7.0.3"
 
 gem "sprockets-rails"
 
-gem 'pg', '~> 1.4', '>= 1.4.1'
 
 gem "puma", "~> 5.0"
 gem "importmap-rails"
@@ -40,6 +39,7 @@ end
 
 group :production do
     gem 'pg', '~> 1.4', '>= 1.4.1'
+
 
 end
 
