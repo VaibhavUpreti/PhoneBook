@@ -1,0 +1,31 @@
+<div class="card">
+  <img src="https://user-images.githubusercontent.com/85568177/175321889-0886bc7f-7c92-42f3-bcea-d6ff98bd5724.jpeg" class="card-img-top" alt="...">
+
+  <div class="card-body">
+    <h3 class="card-title">Contact Description </h3>
+    <br>
+    <p class="card-text">This is a brief Description of your contact</p>
+    <br>
+
+
+
+    <%= render @phonebook %>
+  <%= link_to "Edit this phonebook", edit_phonebook_path(@phonebook), class: "btn btn-success" %>&nbsp;
+  |
+   &nbsp;
+ <%= link_to "Back to phonebooks", phonebooks_path,class: "btn btn-success" %>
+
+  <br>
+  <br>
+  <br>
+
+
+ &nbsp;
+ <%= button_to "Destroy this phonebook", @phonebook, method: :delete, class: "btn btn-danger" %>
+
+
+  </div>
+
+
+</div>
+

@@ -1,0 +1,71 @@
+<nav class="navbar navbar-expand-lg bg-light">
+    <div class="container-fluid">
+    <%= link_to 'PhoneBook' , root_path , class:"navbar-brand" %>
+
+
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <div class="collapse navbar-collapse" id="navbarScroll">
+        <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+            <li class="nav-item">
+
+            <%= link_to 'About' , home_about_path , class: "nav-link"%>
+            </li>
+
+
+
+            <% if user_signed_in? %>
+            <li class="nav-item">
+
+            <%= link_to 'Add Contact' , new_phonebook_path , class: "nav-link"%>
+            </li>
+                <li class="nav-item">
+                    <%= link_to 'Sign Out' , destroy_user_session_path , method: :delete , class: "nav-link"%>
+                </li>
+                <li class="nav-item">
+                    <%= link_to 'Edit Profile' , edit_user_registration_path , class: "nav-link"%>
+                </li>
+            <% else %>
+                <li class="nav-item">
+                    <%= link_to 'Sign Up' , new_user_registration_path , class: "nav-link"%>
+                </li>
+                <li class="nav-item">
+
+                    <%= link_to 'Sign In' , new_user_session_path , class: "nav-link"%>
+                </li>
+            <% end %>
+
+        
+
+
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Reach Out
+            </a>
+        
+            <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+                <li><a class="dropdown-item" href="https://github.com/VaibhavUpreti">GitHub</a></li>
+                <li><a class="dropdown-item" href="https://twitter.com/vaibhav__upreti">Twitter</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="https://www.buymeacoffee.com/vaibhavupreti">Buy me a coffee!</a></li>
+            </ul>
+        
+            
+        </ul>
+            <a class="navbar-brand" >Find your Contacts 📱 👉 </a>
+
+        <form class="d-flex" role="search">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+        </div>
+    
+    
+    </div>
+
+
+
+</nav>

@@ -1,0 +1,350 @@
+
+<!--
+
+  Displayed If user is Signed in 
+
+-->
+<% if user_signed_in? %>
+
+<h1>
+<button type="button" class="btn btn-dark position-relative">
+  Find Your Contacts here! <svg width="1em" height="1em" viewBox="0 0 16 16" class="position-absolute top-100 start-50 translate-middle mt-1" fill="#212529" xmlns="http://www.w3.org/2000/svg"><path d="M7.247 11.14L2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/></svg>
+</button>
+</h1>
+<div class= "card">
+  <img src="https://user-images.githubusercontent.com/85568177/175321889-0886bc7f-7c92-42f3-bcea-d6ff98bd5724.jpeg" class="card-img-top" alt="...">
+
+<div class="card-body">
+    <h2 class="card-title">PhoneBook | ✨ DashBoard </h2>
+    <br>
+    <p class="card-text"> Your one stop to save all your contacts social handles</p>
+    <br>
+<br>
+<div>
+
+
+<table class="table table-success table-striped table-hover table-bordered">
+    <thead class="thead-dark">
+      <tr>
+        <th>Name</th>
+        <th>Phone</th>
+        <th>Email</th>
+        <th>Twitter</th>
+        <th>Instagram</th>
+        <th>Irc Handle</th>
+        <th>Discord</th>
+        <th>View Contact</th>
+      </tr>       
+    </thead>
+    <tbody>
+      <% @phonebooks.each do |phonebook| %>
+      <% if phonebook.user == current_user %>
+        <tr>
+          <td><%=phonebook.first_name %>  <%=phonebook.last_name %> </td>
+          <td><%=phonebook.phone %></td>
+          <td><%=phonebook.email %></td>
+          <td><%=phonebook.twitter %></td>
+          <td><%=phonebook.instagram %></td>
+          <td><%=phonebook.irc_hangle %></td>
+          <td><%=phonebook.discord %></td>
+          <td><%= link_to "Click", phonebook, class: "btn btn-info" %></td>
+        </tr>
+        <%end %>
+        <% end %>
+      </tbody>
+</table>
+</div>
+<br>
+<br>
+
+<%= link_to "Add New Contact", new_phonebook_path, class: "btn btn-success" %>
+
+
+<%else %>
+
+<!--
+
+  Displayed If user is not Signed in 
+
+-->
+
+
+
+<!--
+
+    Green Banner
+-->
+
+<div class="banner">
+    <div>
+        <img src="https://user-images.githubusercontent.com/85568177/175321889-0886bc7f-7c92-42f3-bcea-d6ff98bd5724.jpeg" class="w3-round w3-image w3-opacity-min" alt="Table Setting" width="1500" height="300">
+    </div>  
+</div>
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
+body, html {
+  height: 100%;
+  line-height: 1.8;
+}
+.w3-bar .w3-button {
+  padding: 16px;
+}
+</style>
+</head>
+<body>
+
+<!--
+
+    About Section 
+
+-->
+<div class="w3-container" style="padding:128px 16px" id="about">
+  <h1 class="w3-center">PhoneBook 📱</h1>
+  <p class="w3-center w3-large">Save all your Contact's Socials</p>
+  <div class="w3-row-padding w3-center" style="margin-top:64px">
+    <div class="w3-quarter">
+      <i class="fa fa-desktop w3-margin-bottom w3-jumbo w3-center"></i>
+      <p class="w3-large">Responsive</p>
+      <p>Fully Responsive webapp which works great on large , medium and small devices.</p>
+    </div>
+    <div class="w3-quarter">
+      <i class="fa fa-laptop w3-margin-bottom w3-jumbo"></i>
+      <p class="w3-large">Fast</p>
+      <p>Get started with your PhoneBook. Create an account within 30 seconds.</p>
+    </div>
+    <div class="w3-quarter">
+      <i class="fa fa-diamond w3-margin-bottom w3-jumbo"></i>
+      <p class="w3-large">Organized</p>
+      <p>Contacts well organized in form of card and a dashboard.</p>
+    </div>
+    <div class="w3-quarter">
+      <i class="fa fa-cog w3-margin-bottom w3-jumbo"></i>
+      <p class="w3-large">User Friendly</p>
+      <p>Easy to navigate and use for kids and seniors.</p>
+    </div>
+  </div>
+</div>
+
+<!--
+
+  Dashboard 
+
+-->
+
+
+<div class="w3-container w3-light-grey" style="padding:128px 16px">
+  <div class="w3-row-padding">
+    <div class="w3-col m6">
+      <h2> Organized DashBoard.</h2>
+      <p>PhoneBook has an easy to use dashboard where you can see all your contacts.<br>tempor incididunt ut labore et dolore.</p>
+      <p><a href="/users/sign_up" class="w3-button w3-green mb-2 mt-2"> Try it Out!</a></p>
+    </div>
+    <div class="w3-col m6">
+      <img class="w3-image w3-round-large" src="https://user-images.githubusercontent.com/85568177/175523457-54e509e3-d62b-4525-b439-1a0f87123ec4.png" alt="Buildings" width="700" height="394">
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+<div class="w3-row w3-padding-64" id="about">
+    <div class="w3-col m6 w3-padding-large w3-hide-small">
+    <img src="https://user-images.githubusercontent.com/85568177/175523445-759dbf13-2c00-4e91-9bdb-d5d810da33b0.png" class="w3-round w3-image w3-opacity-min" alt="Table Setting" width="600" height="750">
+    </div>
+
+    <div class="w3-col m6 w3-padding-large">
+      <h1 class="w3-center">About PhoneBook 📱 </h1><br>
+      <h5 class="w3-center">Your one and only Social Stop! </h5>
+      <p class="w3-large">PhoneBook is a webapp built with Ruby and Rails  which demonstrates the simplicity of CRUD(Create, Read, Update and Delete) operations which can be performed with the framework. 
+      <p class="w3-large w3-text-grey w3-hide-medium"> With PhoneBook you can easily save your contacts details- instagram, twitter, phone number , email address, IRC handle , discord username .</p>
+    </div>
+  </div>
+  
+  <hr>
+  
+  <br>
+  <br>
+
+  <div class="w3-row w3-padding-64" id="menu">
+    <div class="w3-col l6 w3-padding-large">
+      <h1 class="w3-center">Features. </h1><br>
+      <h3>Add Users</h3>
+      <p class="w3-text-grey">Add new users in an instant and which will then remain in your PhoneBook forever.</p><br>
+    
+      <h3>Edit Profile</h3>
+      <p class="w3-text-grey">Option to edit your own profile.</p><br>
+    
+      <h3>Organized Dashboard</h3>
+      <p class="w3-text-grey">PhoneBook provides a clean dashboard where all your contacts are stored.</p><br>
+    
+      <h3>Card View</h3>
+      <p class="w3-text-grey">You have a card view option to see your contact where you can edit your details.</p><br>
+    
+    </div>
+    
+    <div class="w3-col l6 w3-padding-large">
+      <img src="https://user-images.githubusercontent.com/85568177/175523453-3b312031-d317-4adb-b90b-95a501f1a1b1.png" class="w3-round w3-image w3-opacity-min" alt="Menu" style="width:100%">
+    </div>
+  </div>
+
+  <hr>
+
+
+<!-- 
+
+Green Strip 
+
+-->
+
+
+<div class="w3-container w3-row w3-center w3-light-green w3-padding-64">
+  <div class="w3-quarter">
+    <span class="w3-xxlarge">7+</span>
+    <br>Social Handles
+  </div>
+  <div class="w3-quarter">
+    <span class="w3-xxlarge">4+</span>
+    <br>CRUD operations
+  </div>
+  <div class="w3-quarter">
+    <span class="w3-xxlarge">100+</span>
+    <br>Happy Users
+  </div>
+  <div class="w3-quarter">
+    <span class="w3-xxlarge">120+</span>
+    <br>Contacts
+  </div>
+</div>
+
+<!-- 
+
+Gallery 
+
+-->
+
+
+<div class="w3-container" style="padding:128px 16px" id="work">
+  <h1 class="w3-center">GALLERY </h1>
+  <p class="w3-center w3-large">PhoneBook Gallery which depicts its components!</p>
+
+  <div class="w3-row-padding" style="margin-top:64px">
+
+    <div class="w3-col l4 m7">
+      <img src="https://user-images.githubusercontent.com/85568177/175523445-759dbf13-2c00-4e91-9bdb-d5d810da33b0.png" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="A microphone">
+        <br>
+        <br>
+        <h3>Adding New Contact </h3>
+
+    </div>
+    <div class="w3-col l4 m7">
+      <img src="https://user-images.githubusercontent.com/85568177/175523453-3b312031-d317-4adb-b90b-95a501f1a1b1.png" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="A phone">
+      <br>
+      <br>
+      <h3>Sign Up Page </h3>
+    </div>
+    <div class="w3-col l4 m7">
+      <img src="https://user-images.githubusercontent.com/85568177/175523457-54e509e3-d62b-4525-b439-1a0f87123ec4.png" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="A drone">
+        <br>
+        <br>
+        <h3>PhoneBook | DashBoard </h3>
+        <br>
+        <hr>
+        <br>
+        <br>
+    </div>  
+  </div>
+
+
+  <div class="w3-row-padding w3-section" >
+    <div class="w3-col l4 m7">
+      <img src="https://user-images.githubusercontent.com/85568177/175523468-5f256d74-cbd3-4c84-8670-d8eff2e45ad4.png" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="A tablet">
+          <br>
+          <br>
+          <h3>Sign In Page </h3>
+    </div>
+    <div class="w3-col l4 m7">
+      <img src="https://user-images.githubusercontent.com/85568177/175523471-58073ea0-4fbe-4da7-9803-9769faaa98df.png" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="A camera">
+          <br>
+          <br>
+          <h3>About PhoneBook Page </h3>
+    </div>
+    <div class="w3-col l4 m7">
+      <img src="https://user-images.githubusercontent.com/85568177/175523463-21081ea8-ff1a-442c-846c-fe953e417ad7.png" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Soundbox">
+          <br>
+          <br> 
+          <h3>Edit User Page  </h3>
+    </div>
+  </div>
+</div>
+
+
+<!-- 
+
+TechStack
+
+
+-->
+<div class="w3-container w3-white w3-padding-64">
+  <div class="w3-row-padding">
+    <div class="w3-col m6">
+      <h3>TechStack Used.</h3>
+      <p>PhoneBook is built with a framework named Ruby on Rails which has a MVC (Models , Views, Controllers ) architecture .</p>
+      <p>Similar to Django in python.</p>
+    </div>
+    <div class="w3-col m6">
+      <p class="w3-wide"><i class="fa fa-phone w3-margin-right"></i>Ruby</p>
+      <div class="w3-grey">
+        <div class="w3-container w3-light-green w3-center" style="width:90%">Ruby</div>
+      </div>
+      <p class="w3-wide "><i class="fa fa-desktop w3-margin-right"></i>HTML</p>
+      <div class="w3-grey">
+        <div class="w3-container w3-light-green w3-center" style="width:85%">HTML</div>
+      </div>
+      <p class="w3-wide"><i class="fa fa-photo w3-margin-right"></i>Ruby on Rails</p>
+      <div class="w3-grey">
+        <div class="w3-container w3-light-green w3-center" style="width:75%">Ruby on Rails</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- 
+
+Footer 
+
+
+-->
+
+
+
+<footer class="w3-container w3-padding-32 w3-light-grey w3-center">
+  <a href="#" class="w3-button w3-green w3-margin"><i class="fa fa-arrow-up w3-margin-right"></i>Scroll to top</a>
+  <h4>Socials</h4>
+  <div class="w3-xlarge w3-section">
+    <a class="fa fa-twitter w3-hover-opacity" href = "https://twitter.com/vaibhav__upreti"></a>
+    <a class="fa fa-linkedin w3-hover-opacity" href = "https://www.linkedin.com/in/vaibhav-upreti-739b0421a/"></a>
+  </div>
+</footer>
+</body>
+</html>
+
+
+
+
+
+<%end %>

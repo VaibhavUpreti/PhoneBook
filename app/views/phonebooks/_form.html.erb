@@ -1,0 +1,75 @@
+<%= form_with(model: phonebook) do |form| %>
+  <% if phonebook.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(phonebook.errors.count, "error") %> prohibited this phonebook from being saved:</h2>
+
+      <ul>
+        <% phonebook.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<form>
+
+  <div class="field form-label mb-3">
+    <%= form.label :first_name, style: "display: block" %>
+    <%= form.text_field :first_name,class: "form-control", placeholder: "First Name" %>
+  </div>
+
+  <div class="field form-group mb-3">
+    <%= form.label :last_name, style: "display: block" %>
+    <%= form.text_field :last_name,class: "form-control", placeholder: "Lase Name" %>
+  </div>
+
+  <div class="field form-group mb-3">
+    <%= form.label :phone, style: "display: block" %>
+    <%= form.text_field :phone,class: "form-control", placeholder: "+91 9583212xxxx" %>
+  </div>
+
+  <div class="field form-group mb-3">
+    <%= form.label :email, style: "display: block" %>
+    <%= form.text_field :email,class: "form-control", placeholder: "example@gmail.com" %>
+  </div>
+
+  <div class="field form-group mb-3">
+    <%= form.label :twitter, style: "display: block" %>
+    <%= form.text_field :twitter,class: "form-control" , placeholder: "twitter"%>
+  </div>
+
+  <div class="field form-group mb-3">
+    <%= form.label :instagram, style: "display: block" %>
+    <%= form.text_field :instagram,class: "form-control", placeholder: "instagram" %>
+  </div>
+
+  <div class="field form-group mb-3">
+    <%= form.label :irc_hangle, style: "display: block" %>
+    <%= form.text_field :irc_hangle,class: "form-control", placeholder: "irchandle" %>
+  </div>
+
+  <div class="field form-group mb-3">
+    <%= form.label :discord, style: "display: block" %>
+    <%= form.text_field :discord,class: "form-control" , placeholder: "Username#1111"%>
+  </div>
+
+
+
+  <div class="field form-group mb-3">
+
+    <%= form.number_field :user_id, id: :phonebook_user_id , class: "form-control" , value: current_user.id , type: :hidden %>
+  </div>
+
+
+
+
+  <br>
+<button class=" btn btn-success" >
+
+    <%= form.submit class: "btn btn-success"  %>
+
+</button>
+
+</form>
+
+<% end %>
