@@ -1,0 +1,50 @@
+# This workflow uses actions that are not certified by GitHub.  They are
+# provided by a third-party and are governed by separate terms of service,
+# privacy policy, and support documentation.
+#
+# This workflow will install a prebuilt Ruby version, install dependencies, and
+# run tests and linters.
+name: CI
+on:
+  push:
+    branches: [ main , develop ]
+  pull_request:
+    branches: [ main , develop ]
+
+jobs:
+  test:
+  # services:
+    # postgres:
+      # image: postgres:11-alpine
+      # ports: ['5432:5432']
+    runs-on: ubuntu-latest
+
+    steps : 
+      - uses : actions/checkout@v2
+      - name : Setup Ruby
+          uses : ruby/setup-ruby@1.45.0
+          with : 
+              ruby-version : 2.7.1 
+
+      - uses : Borales/actions-yarn@v2.3.0
+        with : 
+            cmd : install 
+
+      - name : Install Dependencies 
+        run : | 
+          sudo apt install -yqq libpq-dev
+          gem install bundler
+
+      - name : Install Gems 
+        run : | 
+          bundle install
+
+      - name : Prepare Database 
+        run : | 
+          bundle exec rails db:prepare  
+
+      - name : Run Tests 
+        env : 
+          DATABASE_URL: "postgres://postgres:@localhost:5432/databasename"
+        run : | 
+          bundle exec rails test
