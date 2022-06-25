@@ -13,4 +13,4 @@ jobs:
         with :
             repo-token : $ {{ secrets.GITHUB_TOKEN }}
             pr-message : |- 
-            Congrats on making your first pull request to PhoneBook . Thanks for taking out your time to improve PhoneBook. 
+                Congrats on making your first pull request to PhoneBook . Thanks for taking out your time to improve PhoneBook. 
