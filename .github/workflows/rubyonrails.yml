@@ -50,6 +50,8 @@ jobs:
         with:
           bundler-cache: true
       # Add or replace any other lints here
+      - name: Install bundler 
+        run : sudo gem install bundler
       - name: Security audit dependencies
         run: bundle exec bundler-audit --update
       - name: Security audit application code
