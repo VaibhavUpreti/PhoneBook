@@ -7,7 +7,6 @@ gem "rails", "~> 7.0.3"
 
 gem "sprockets-rails"
 
-
 gem "puma", "~> 5.0"
 gem "importmap-rails"
 gem "turbo-rails"
@@ -26,7 +25,6 @@ end
 
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
-  gem "sqlite3", "~> 1.4"
 
   gem "web-console"
 
@@ -38,9 +36,7 @@ group :development do
 end
 
 group :production do
-    gem 'pg', '~> 1.4', '>= 1.4.1'
-
-
+    gem 'pg' 
 end
 
 group :test do
