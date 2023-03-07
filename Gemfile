@@ -17,6 +17,7 @@ gem "bootsnap", require: false
 gem 'devise', '~> 4.8', '>= 4.8.1'
 gem 'jquery-rails', '~> 4.3', '>= 4.3.5'
 
+gem 'pg', '~> 1.4', '>= 1.4.5'
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
@@ -36,7 +37,7 @@ group :development do
 end
 
 group :production do
-    gem 'pg' 
+   # gem 'pg'
 end
 
 group :test do
